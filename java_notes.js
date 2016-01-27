@@ -26,3 +26,6 @@ if (playerOne > playerTwo) {
     highScore = playerTwo;
 }
 
+if (a > b) {
+    //this stuff
+}
