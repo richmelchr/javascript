@@ -11,3 +11,18 @@ if (a == c) {
     alert("not equal");
 }
 
+//&& logical and
+//|| logical or
+
+//----------------------------------------------------------------
+var playerOne = 500;
+var playerTwo = 600;
+
+var highScore = (playerOne > playerTwo) ? playerOne : playerTwo;
+
+if (playerOne > playerTwo) {
+    highScore = playerOne;
+} else {
+    highScore = playerTwo;
+}
+
