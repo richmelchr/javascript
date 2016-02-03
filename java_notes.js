@@ -28,18 +28,43 @@ if (playerOne > playerTwo) {
 //-Console------------------------------------------------------
 console.log("testing console");
 
-//--useful methods------------------------------------------------------
+//--useful string methods------------------------------------------------------
 var phrase = "this is some sample text";
 
 console.log(phrase.length); //output will be 24
 console.log(phrase.toUpperCase()); //output 'phrase' in all uppercase
 var words = phrase.split(" "); //split this string into an array on a space
 var position = phrase.indexOf("sample"); //var will equal 13
+var segment = phrase.slice(0,8); //var will equal "this is"
 
 if (phrase.indexOf("absent") == -1) { //indexOf returns -1 if
     console.log("this word does not occur.");
 }
-//-------------------------------------------------------------
+//--Date object-------------------------------------------------------
+var today = new Date(); //date object
+var y2k = new Date(2000, 0, 1); //create new date object with start time params
+var todayMonth = today.getMonth();
+var now = today.getTime();
 
+//---Objects----------------------------------------------------------
+var player1 = Object();
+player1.name = "Fred";
+player1.score = 1000;
+player1.rank = 1;
 
-//03 Types and Objects // Strings
+var player2 = {name: "Tom", score: 500, rank: 2}; //Object creation shorthand
+
+//--Create Method--
+function playerDetails() {
+    //display info about each player
+    console.log(this.name + "has a rank of" + this.rank);
+}
+
+player1.logDetails = playerDetails; //you have created a new method to use on this object
+player2.logDetails = playerDetails; //when you use this method it will run playerDetails()
+
+player1.logDetails(); //calls the method from the above line
+
+//--------------------------------------------------------------------
+
+//04 understanding the DOM // 1_WhatIsTheDOM.mov
