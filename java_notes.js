@@ -65,6 +65,12 @@ player2.logDetails = playerDetails; //when you use this method it will run playe
 
 player1.logDetails(); //calls the method from the above line
 
-//--------------------------------------------------------------------
+//---get Id-----------------------------------------------------------------
+var myElement = document.getElementById("first");
 
+var myListItems = document.getElementsByTagName("li");
+
+
+
+//--------------------------------------------------------------------------
 //04 understanding the DOM // 1_WhatIsTheDOM.mov
