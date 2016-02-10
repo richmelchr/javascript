@@ -4,6 +4,7 @@
 var a = 5;
 var b = "5"; // quotation mark's make this a string
 var c = 5;
+var emptyVariable;
 
 if (a == c) {
     console.log("they equal");
@@ -27,6 +28,10 @@ if (playerOne > playerTwo) {
 }
 //-Console------------------------------------------------------
 console.log("testing console");
+console.debug("test");
+console.info("test");
+console.warn("test");
+console.error("test");
 
 //--useful string methods------------------------------------------------------
 var phrase = "this is some sample text";
@@ -46,6 +51,36 @@ var y2k = new Date(2000, 0, 1); //create new date object with start time params
 var todayMonth = today.getMonth();
 var now = today.getTime();
 
+//--Loops------------------------------------------------------------------
+for (var i=1; i<10; i++) {
+    //do stuff, most common loop
+}
+//--break-----------------------
+for (var i=1; i<10; i++) {
+    if (i == 101) {
+       break; //exit loop
+    }
+}
+//--continue--------------------
+for (var i=0; i<10; i++) {
+    if (i%5 == 0) {
+        continue;   //done with this iteration, move us back to top of loop
+                    //ignore all following commands
+    }
+}
+
+//------------------------------
+var loopVar = 1;
+while (loopVar < 10) {
+    //do something
+    loopVar++;
+}
+//-------------------------------
+do {
+    //do something
+    //while loop not very common
+    loopVar++;
+} while (loopVar < 10);
 //---Objects----------------------------------------------------------
 var player1 = Object();
 player1.name = "Fred";
@@ -89,14 +124,14 @@ console.log(myListItems);
     -Creating
     -Tools
 02 Core JavaScript Syntax
-    Structure
-    Where
-    Variables
-    Conditional
-    Operators
-    Console
-    Loops
-    Functions
+    -Structure
+    -Where
+    -Variables
+    -Conditional
+    -Operators
+    -Console
+    -Loops
+    *Functions
     Comments
 03 Types and Objects
     Arrays
