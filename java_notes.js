@@ -78,7 +78,82 @@ console.log(myListItems);
 
 
 
+//---------------------------------------------------------------------------
+/*
+00 Introduction
+    -Welcome
+    -Prerequisites
+    -ExerciseFiles
+01 Getting Started
+    -IntroJS
+    -Creating
+    -Tools
+02 Core JavaScript Syntax
+    Structure
+    Where
+    Variables
+    Conditional
+    Operators
+    Console
+    Loops
+    Functions
+    Comments
+03 Types and Objects
+    Arrays
+    Numbers
+    Strings
+    Dates
+    Objects
+04 Understanding the DOM
+    -What is the DOM
+    -Nodes
+05 Working with the DOM
+    -GetElements
+    ChangingDOM
+    CreateDOM
+06 Working with Events and Event Listeners
+    Event Intro
+    Click Load
+    Focus Blur
+    Timers
+07 Debugging JavaScript
+    -Common Errors
+    Firebug
+    Debugging
+08 Building Smarter Forms
+    Forms Intro
+    Prevent Submit
+    Hide Show
+09 UI Enhancement
+    Style Intro
+    Applying Classes
+    Inline Styles
+10 JavaScript Best Practices
+    Style Guide
+    Minify
+    Code Check
+11 JavaScript Libraries
+    JS Libs
+    Multiple
+    jQuery
+    CDN
+12 JavaScript and HTML5
+    JS HTML5
+    Modern
+    Strict
+13 Advanced JavaScript Features
+    Avoid
+    RegExp
+    Ajax
+    ObjProto
+14 Putting it all Together
+    Count Down
+    Resize
+    Accordion
+15 Conclusion
+    Where
+    Goodbye
+ */
 
 
-
-//07 Debugging JavaScript // 1_commonErrors.mov
+//
