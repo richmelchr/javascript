@@ -66,11 +66,19 @@ player2.logDetails = playerDetails; //when you use this method it will run playe
 player1.logDetails(); //calls the method from the above line
 
 //---get Id-----------------------------------------------------------------
-var myElement = document.getElementById("first");
+var mainTitle = document.getElementById("mainTitle");
+console.log("this is an element of type: ", mainTitle.nodeType);
+console.log("the inner HTML is ", mainTitle.innerHTML);
+console.log("Child nodes: ", mainTitle.childNodes.length);
 
-var myListItems = document.getElementsByTagName("li");
-
-
+var myListItems = document.getElementsByTagName("li"); //this returns an array of all li elements
+console.log(myListItems);
 
 //--------------------------------------------------------------------------
-//04 understanding the DOM // 1_WhatIsTheDOM.mov
+
+
+
+
+
+
+//07 Debugging JavaScript // 1_commonErrors.mov
