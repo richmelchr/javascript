@@ -28,10 +28,10 @@ if (playerOne > playerTwo) {
 }
 //-Console------------------------------------------------------
 console.log("testing console");
-console.debug("test");
-console.info("test");
-console.warn("test");
-console.error("test");
+console.debug("this error is ok");
+console.info("this error is ok");
+console.warn("this error is ok");
+console.error("this error is ok");
 
 //--useful string methods------------------------------------------------------
 var phrase = "this is some sample text";
@@ -109,10 +109,85 @@ console.log("Child nodes: ", mainTitle.childNodes.length);
 var myListItems = document.getElementsByTagName("li"); //this returns an array of all li elements
 console.log(myListItems);
 
-//--------------------------------------------------------------------------
+//--Functions------------------------------------------------------------------
+function myFunction() {
+    //define functions before call
+    console.log("we're in the function");
+}
 
+function mySecond(x, y) {
+    var myVar = x * y;
+    console.log(myVar);
+    return myVar;
+}
 
+var myResult = mySecond(6, 9);
 
+//functions can have return statements or not, anything goes.
+//function calls with extra parameters are ignored
+//function calls with to few parameters treat the missing param's as undefined
+
+//--Arrays--------------------------------------------------------------------
+var manyValues = [];
+
+manyValues[0] = 3;
+manyValues[1] = "mouse";
+
+var moreValues = [50, 60, "mouse"];
+
+console.log(manyValues[1]);
+console.log(moreValues.length);
+
+var reverseVal = moreValues.reverse();
+var joinVal = moreValues.join();
+var sortVal = moreValues.sort();
+
+//--isNaN------------------------------------------------------------------------
+var numThree = "55"; //could be "abc" depending on user input
+var myNumber = Number(numThree); //make it a number
+if (!isNaN(myNumber)) { //checking to see if 'myNumber' is not-not a number "!"
+    console.log("It is a number");
+}
+
+var floating = 200.6;
+var nonFloat = Math.round(floating); //round number to nearest int
+
+var some23 = 200, some34 = 1000, some31 = 4;
+var biggest = Math.max(some23, some34, some31);     //return biggest var
+var smallest = Math.min(some23, some34, some31);    //return smallest var
+
+//Math.PI
+//Math.random()
+//Math.sqrt()
+//Math.log()
+
+//--Changing the DOM------------------------------------------------------------
+var  myContent =  document.getElementById("mainTitle");
+myContent.setAttribute("align", "right"); //add align="right" to item with Id="mainTitle"
+
+mainTitle = document.getElementById("mainTitle");
+console.log(mainTitle.innerHTML); //displays text inside "mainTitle"
+
+var first = document.getElementById("first"); //gets all html inside div tag
+console.log(first.innerHTML);   //prints out all html inside Id tag
+
+//--Creating the DOM------------------------------------------------------------
+var abc = document.getElementById("abc");
+var newLi = document.createElement("li"); //could be <h1> or <p> or <etc>...
+abc.appendChild(newLi);
+
+var myText = document.createTextNode("this li created with JavaScript");
+newLi.appendChild(myText);
+
+//same as doing the above 5 lines
+var newText = document.createTextNode("more condensed JavaScript");
+document.getElementById("abc").appendChild(document.createElement("li")).appendChild(newText);
+
+//grab a specific un-titled li element
+var abcTwo = document.getElementById("abc");
+var newLiSecond = document.createElement("li"); //create new Li for each insert
+var secondItem = abcTwo.getElementsByTagName("li")[1]; //grab second "li" element
+abcTwo.insertBefore(newLiSecond, secondItem); //creates empty "li element"
 //---------------------------------------------------------------------------
 /*
 00 Introduction
@@ -131,23 +206,22 @@ console.log(myListItems);
     -Operators
     -Console
     -Loops
-    *Functions
-    Comments
+    -Functions
 03 Types and Objects
-    Arrays
-    Numbers
-    Strings
-    Dates
-    Objects
+    -Arrays
+    -Numbers
+    -Strings
+    -Dates
+    -Objects
 04 Understanding the DOM
     -What is the DOM
     -Nodes
 05 Working with the DOM
     -GetElements
-    ChangingDOM
-    CreateDOM
+    -ChangingDOM
+    -CreateDOM
 06 Working with Events and Event Listeners
-    Event Intro
+    *Event Intro
     Click Load
     Focus Blur
     Timers
