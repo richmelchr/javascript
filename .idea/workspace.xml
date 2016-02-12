@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="10ea7e61-97d4-4d65-bfd4-1aeac3515a00" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css.css" afterPath="$PROJECT_DIR$/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_notes.js" afterPath="$PROJECT_DIR$/java_notes.js" />
     </list>
     <ignored path="javascript.iws" />
@@ -32,8 +34,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5049505">
-                  <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.7480748">
+                  <caret line="40" column="72" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
                   <folding>
                     <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
@@ -44,8 +46,8 @@
           <file leaf-file-name="css.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state vertical-scroll-proportion="-1.3076923">
+                  <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -68,8 +70,8 @@
           <file leaf-file-name="java_notes.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/java_notes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-1.4181818">
-                  <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+                <state vertical-scroll-proportion="0.6545454">
+                  <caret line="275" column="0" selection-start-line="275" selection-start-column="0" selection-end-line="275" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -95,8 +97,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css.css" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/java_notes.js" />
       </list>
     </option>
@@ -307,7 +309,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455266667378</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="finished functions encapsulating pass-01">
+      <created>1455267623617</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1455267623617</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -354,7 +362,8 @@
     <MESSAGE value="finished loops, onto functions or comments" />
     <MESSAGE value="finished file 5, starting 6" />
     <MESSAGE value="finished 06-1, encapsulating code into functions for modularity" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished 06-1, encapsulating code into functions for modularity" />
+    <MESSAGE value="finished functions encapsulating pass-01" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished functions encapsulating pass-01" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -727,16 +736,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5049505">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7480748">
+          <caret line="40" column="72" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
           <folding>
             <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -745,8 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/java_notes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4181818">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.6545454">
+          <caret line="275" column="0" selection-start-line="275" selection-start-column="0" selection-end-line="275" selection-end-column="0" />
           <folding />
         </state>
       </provider>

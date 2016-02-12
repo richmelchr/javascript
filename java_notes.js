@@ -250,7 +250,35 @@ function eventListen() {
     //document.removeEventListener('click', eventFunction, false);
 }
 
-//---------------------------------------------------------------------------
+//--Common Events----------
+function testEvent() {
+    var myImage = document.getElementById("cat");
+    myImage.onclick = function() {
+        console.log("you clicked my img");
+    }
+}
+
+//--Form Events-----------
+function monitorForm() {
+    var emailField = document.getElementById("email");
+
+    emailField.onfocus = function() {
+        if (emailField.value == "your email") {
+            emailField.value = "";
+        }
+    };
+    emailField.onblur = function() {
+        if (emailField.value == "") {
+            emailField.value = "your email";
+        }
+    };
+}
+
+
+//---------------------------------------------------------------------------\
+
+document.onload = monitorForm();    //rolling notes function load event
+                                //only use window.onload once per document!
 /*
 00 Introduction
     -Welcome
@@ -284,8 +312,8 @@ function eventListen() {
     -CreateDOM
 06 Working with Events and Event Listeners
     -Event Intro
-    Click Load
-    Focus Blur
+    -Click Load
+    -Focus Blur
     Timers
 07 Debugging JavaScript
     -Common Errors
