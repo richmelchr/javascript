@@ -274,11 +274,58 @@ function monitorForm() {
     };
 }
 
+//--Timers-------------------------------------------------------------------
+function timerDemo() {
+    function simpleMessage() {
+        alert("this demonstrates the 'setTimeout' method");
+    }
+    setTimeout(simpleMessage, 1000); //delays calling the passed in function
+}
 
-//---------------------------------------------------------------------------\
+//this demonstrates the setInterval() method
+//and also cycles through 3 images
+function intervalDemo() {
+    var myCat = document.getElementById("myCat");
+    var imageArray = ["images/cat.png", "images/cat2.png", "images/cat3.png"];
+    var imageIndex = 0;
 
-document.onload = monitorForm();    //rolling notes function load event
-                                //only use window.onload once per document!
+    function changeImg() {
+        myCat.setAttribute("src", imageArray[imageIndex]);
+        imageIndex++;
+        if (imageIndex >= imageArray.length) {
+            imageIndex = 0;
+        }
+    }
+
+    var intervalHandle = setInterval(changeImg, 2000);
+
+    //stops image from changing by clearing the setInterval() delay
+    myCat.onclick = function() {
+        clearInterval(intervalHandle); //clearInterval method
+    };
+}
+
+//--Forms-------------------------------------------------------------------
+function preventSubmit() {
+    document.getElementById("myForm").onsubmit = function() {
+    var emailValue = document.getElementById("email").value;
+        if (emailValue == "" || emailValue == "your email" ) {
+            //"your email" is default input value
+            document.getElementById("errorMessage").innerHTML = "Provide email";
+            //to Stop a form from submitting
+            return false;
+        } else {
+            document.getElementById("errorMessage").innerHTML = "";
+            //reset and allow form to submit
+            return true;
+        }
+    };
+    //note: this function can be associated with monitorForm() function
+}
+
+//---------------------------------------------------------------------------
+document.onload = preventSubmit();      //rolling notes function load event
+                                        //only use window.onload once per document!
 /*
 00 Introduction
     -Welcome
@@ -314,14 +361,14 @@ document.onload = monitorForm();    //rolling notes function load event
     -Event Intro
     -Click Load
     -Focus Blur
-    Timers
+    -Timers
 07 Debugging JavaScript
     -Common Errors
-    Firebug
-    Debugging
+    -Firebug
+    -Debugging
 08 Building Smarter Forms
-    Forms Intro
-    Prevent Submit
+    -Forms Intro
+    -Prevent Submit
     Hide Show
 09 UI Enhancement
     Style Intro
