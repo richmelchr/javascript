@@ -1,20 +1,21 @@
 /**
  * Created by richmelchr on 1/26/2016.
  */
-var a = 5;
-var b = "5"; // quotation mark's make this a string
-var c = 5;
-var emptyVariable;
+function simpleVariables() {
+    var a = 5;
+    var b = "5"; // quotation mark's make this a string
+    var c = 5;
+    var emptyVariable;
 
-if (a == c) {
-    console.log("they equal");
-} else {
-    alert("not equal");
-}
+    if (a == c) {
+        console.log("they equal");
+    } else {
+        alert("not equal");
+    }
 
 //&& logical and
 //|| logical or
-
+}
 //--------Ternary Operator--------------------------------------
 var playerOne = 500;
 var playerTwo = 600;
@@ -188,6 +189,39 @@ var abcTwo = document.getElementById("abc");
 var newLiSecond = document.createElement("li"); //create new Li for each insert
 var secondItem = abcTwo.getElementsByTagName("li")[1]; //grab second "li" element
 abcTwo.insertBefore(newLiSecond, secondItem); //creates empty "li element"
+
+//--Events-----------------------------------------------------------------------
+/* HTML
+<button onclick="alert('Hello World';"> //sloppy event listener
+        //run some JavaScript
+</button>
+*/
+
+////var ulClick = document.getElementById("abc");
+//ulClick.onclick = function() {                  //non typical use. works past IE:8
+//    var test = ulClick.style.color;
+//    if (test == "black") {
+//        this.style.color = "red";
+//    } else {
+//        this.style.color = "black";
+//    }
+//};
+
+var redChange = document.getElementById("abc").getElementsByTagName("li")[0];
+redChange.addEventListener('click', eventFunction, false);  //note: not in use on IE:8
+redChange.addEventListener('click', eventFunctionTwo, false);
+function eventFunction() {                                  //but web standards demand this usage
+    var test = this.style.color;
+    if (test == "black") {
+        this.style.color = "red";
+    } else {
+        this.style.color = "black";
+    }
+}
+function eventFunctionTwo() {
+    //this displays the usability of having multiple .addEventListener() to a single element
+}
+//document.removeEventListener('click', eventFunction, false);
 //---------------------------------------------------------------------------
 /*
 00 Introduction
@@ -221,7 +255,7 @@ abcTwo.insertBefore(newLiSecond, secondItem); //creates empty "li element"
     -ChangingDOM
     -CreateDOM
 06 Working with Events and Event Listeners
-    *Event Intro
+    -Event Intro
     Click Load
     Focus Blur
     Timers
