@@ -345,8 +345,37 @@ function swapClass() {
     };
 }
 
+function inlineStyles() {
+    var currentPos = 0;
+    var intervalHandle;
+
+    function beginAnimate() {
+        var cat = document.getElementById("myCat");
+        cat.style.position = "absolute";
+        cat.style.left = "0px";
+        //cause the animateBox function to be called
+        intervalHandle = setInterval(animateBox, 50);
+    }
+    function animateBox() {
+        //set new position
+        currentPos+=5;
+        var cat = document.getElementById("myCat");
+        cat.style.left = currentPos + "px";
+
+        if (currentPos > 200) {
+            //clear interval
+            clearInterval(intervalHandle);
+            //reset custom inline styles
+            cat.style.position = "";
+            cat.style.left = "";
+            cat.style.top = "";
+        }
+    }
+    setTimeout(beginAnimate, 1000); //delay start of animation
+}
+
 //---------------------------------------------------------------------------
-document.onload = swapClass();      //rolling notes function load event
+document.onload = inlineStyles();      //rolling notes function load event
                                         //only use window.onload once per document!
 /*
 00 Introduction
@@ -393,8 +422,8 @@ document.onload = swapClass();      //rolling notes function load event
     -Prevent Submit
     -Hide Show
 09 UI Enhancement
-    Style Intro
-    Applying Classes
+    -Style Intro
+    -Applying Classes
     Inline Styles
 10 JavaScript Best Practices
     Style Guide

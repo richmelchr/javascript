@@ -5,11 +5,15 @@ form#myForm {
     color: green;
     text-shadow: fuchsia;
     text-transform: uppercase;
-
-
 }
 .swapClass1 {
     color: fuchsia;
     text-shadow: green;
     text-transform: lowercase;
+}
+#cat {
+    /*important so-that when box animates,
+    other elements will not move around*/
+    width: 90px;
+    height: 90px;
 }
