@@ -323,8 +323,30 @@ function preventSubmit() {
     //note: this function can be associated with monitorForm() function
 }
 
+//--Style--------------------------------------------------------------------
+function styleGuide() {
+    //changes first <li> of #abc to red
+    var id = document.getElementById("abc");
+    var li = id.getElementsByTagName("li")[1];
+    li.style.color = "red";
+}
+
+function swapClass() {
+    //this function demonstrates how its more efficient sometimes to swap between a CSS class
+    //already defined than to create tons of code for each .style property
+    var id = document.getElementById("abc");
+    id.onclick = function() {
+        var li = id.firstElementChild;
+        if (li.className == "swapClass0") {
+            li.className = "swapClass1";
+        } else {
+            li.className = "swapClass0";
+        }
+    };
+}
+
 //---------------------------------------------------------------------------
-document.onload = preventSubmit();      //rolling notes function load event
+document.onload = swapClass();      //rolling notes function load event
                                         //only use window.onload once per document!
 /*
 00 Introduction
@@ -369,7 +391,7 @@ document.onload = preventSubmit();      //rolling notes function load event
 08 Building Smarter Forms
     -Forms Intro
     -Prevent Submit
-    Hide Show
+    -Hide Show
 09 UI Enhancement
     Style Intro
     Applying Classes
