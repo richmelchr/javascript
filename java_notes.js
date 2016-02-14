@@ -1,5 +1,6 @@
 /**
  * Created by richmelchr on 1/26/2016.
+ * Contains notes from "Lynda.com JavaScript Essential Training"
  */
 function simpleVariables() {
     var a = 5;
