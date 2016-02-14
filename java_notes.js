@@ -112,6 +112,28 @@ function createMethod() {
 
     player1.logDetails(); //calls the method from the above line
 }
+//--Prototype-----------
+//note: not the "Prototype Library"
+function protoDemo() {
+    function Player(name, score, rank) { //constructor function to create Objects with passed in parameters | note: the uppercase
+        this.name = name;
+        this.score = score;
+        this.rank = rank;
+    }
+
+    Player.prototype.logInfo = function () {
+        console.log("I am: ", this.name);
+    };
+    Player.prototype.promote = function () {
+        this.rank++;
+        console.log("My new rank is: ", this.rank);
+    };
+
+    var fred = new Player("Fred", 10000, 5);
+    fred.logInfo();
+    fred.promote();
+}
+
 //---get Id-----------------------------------------------------------------
 function getId() {
     var mainTitle = document.getElementById("mainTitle");
@@ -346,6 +368,7 @@ function swapClass() {
 }
 
 function inlineStyles() {
+    //animates cat picture from left to right 200px
     var currentPos = 0;
     var intervalHandle;
 
@@ -373,84 +396,143 @@ function inlineStyles() {
     }
     setTimeout(beginAnimate, 1000); //delay start of animation
 }
+//--Regular expressions--------------------------------------------
+function regExp() {
+    var myRE = /hello/; //short version
+    //or
+    var myREG = new RegExp("hello"); //long version
+    //
+    var myString = "does this sentence contain hello?";
+    if (myRE.test(myString)) {
+        alert("yes");
+    }
+}
+
+function moreRegExp() {
+    var regA = new RegExp("^hello");    //^ look for 'hello' at the |start| of the string
+    var regB = new RegExp("hello$");    //$ look for 'hello' at the |end| of the string
+    var regC = new RegExp("hel+o");     //+ look for 'l' used |once or more|. "helo", "hellllllo", etc..
+    var regD = new RegExp("hel*o");     //* look for 'l' used |zero or more|. "heo", "helllllo", etc..
+    var regE = new RegExp("hel?o");     //? look for 'l' used |zero or one|. "heo", "helo"
+    var regF = new RegExp("hi|by");     //| look for 'hi' |or| 'by' used. true if either found
+    var regG = new RegExp("he..o");     //. look for any character
+    var regH = new RegExp("\wello");    //\w look for alphanumeric or underscore _
+    var regI = new RegExp("\bhello");   //\b look for word boundary, hello must appear after a space or new line
+    var regJ = new RegExp("[crnd]ope"); //[...] range of chars to match for. "cope", "rope", "nope", etc..
+    //list goes on and on
+
+    var zip = new RegExp("^[0-9]{5}(?:-[0-9]{4})?$");
+    //check for valid format for US Zip code with optional 4 digit extension
+
+    //Regular expressions are widely available, check for existing code before creating one
+    //and also look for regular expression creators and editors
+}
+function validateEmail(email) {//checks for valid email address
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+//--Ajax demo---------------------------------------------------------------
+function ajax() {
+    // 1: create the request
+    var myRequest;
+
+    //feature check!
+    if (window.XMLHttpRequest) {
+        myRequest = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        myRequest = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    //2: create an event handler for our request to call back
+    myRequest.onreadystatechange = function() {
+        console.log("this was called");
+        console.log(myRequest.readyState); //displays current ready state of ajax call
+        if (myRequest.readyState == 4) {
+            var p = document.createElement("p");
+            var t = document.createTextNode(myRequest.responseText);
+            p.appendChild(t);
+            document.getElementById("ajaxDemo").appendChild(p);
+        }
+    };
+
+    //open and send it
+    myRequest.open('GET', 'ajax.txt', true);
+    //any parameters?
+    myRequest.send(null);
+}
+//--Countdown Demo--------------------------------------------------------
+function countdown() {
+    var secondsRemaining;
+    var intervalHandle;
+
+    function resetPage() {
+        document.getElementById("inputArea").style.display = "block";
+    }
+
+    function tick() {
+        //grab the h1
+        var timeDisplay = document.getElementById("time");
+
+        //turn seconds into mm:ss
+        var min = Math.floor(secondsRemaining / 60);
+        var sec = secondsRemaining - (min * 60);
+
+        //add a leading zero (as a string value) if seconds less than 10
+        if (sec < 10) {
+            sec = "0" + sec;
+        }
+        //concatenate with colon
+        var message = min.toString() + ":" + sec;
+        //now change the display
+        timeDisplay.innerHTML = message;
+
+        //stop if down to zero
+        if (secondsRemaining == 0) {
+            alert("Done!");
+            clearInterval(intervalHandle);
+            resetPage();
+        }
+        //subtract from seconds remaining
+        secondsRemaining--;
+    }
+
+    function startCountdown() {
+        //get contents of the "minutes" text box
+        var minutes = document.getElementById("minutes").value;
+        //check if not a number
+        if (isNaN(minutes)) {
+            alert("Please enter a number!");
+            return;
+        }
+        //how many seconds?
+        secondsRemaining = minutes * 60;
+        //every second, call the "tick" function
+        intervalHandle = setInterval(tick, 1000);
+        //hide the form
+        document.getElementById("inputArea").style.display = "none";
+    }
+
+    window.onload = function() {
+      var inputMinutes = document.createElement("input");
+        inputMinutes.setAttribute("id", "minutes");
+        inputMinutes.setAttribute("type", "text");
+        //create a button
+        var startButton = document.createElement("input");
+        startButton.setAttribute("type", "button");
+        startButton.setAttribute("value", "Start Countdown");
+        startButton.onclick = function() {
+            startCountdown();
+        };
+        document.getElementById("inputArea").appendChild(inputMinutes);
+        document.getElementById("inputArea").appendChild(startButton);
+    };
+
+}
 
 //---------------------------------------------------------------------------
-document.onload = inlineStyles();      //rolling notes function load event
-                                        //only use window.onload once per document!
-/*
-00 Introduction
-    -Welcome
-    -Prerequisites
-    -ExerciseFiles
-01 Getting Started
-    -IntroJS
-    -Creating
-    -Tools
-02 Core JavaScript Syntax
-    -Structure
-    -Where
-    -Variables
-    -Conditional
-    -Operators
-    -Console
-    -Loops
-    -Functions
-03 Types and Objects
-    -Arrays
-    -Numbers
-    -Strings
-    -Dates
-    -Objects
-04 Understanding the DOM
-    -What is the DOM
-    -Nodes
-05 Working with the DOM
-    -GetElements
-    -ChangingDOM
-    -CreateDOM
-06 Working with Events and Event Listeners
-    -Event Intro
-    -Click Load
-    -Focus Blur
-    -Timers
-07 Debugging JavaScript
-    -Common Errors
-    -Firebug
-    -Debugging
-08 Building Smarter Forms
-    -Forms Intro
-    -Prevent Submit
-    -Hide Show
-09 UI Enhancement
-    -Style Intro
-    -Applying Classes
-    Inline Styles
-10 JavaScript Best Practices
-    Style Guide
-    Minify
-    Code Check
-11 JavaScript Libraries
-    JS Libs
-    Multiple
-    jQuery
-    CDN
-12 JavaScript and HTML5
-    JS HTML5
-    Modern
-    Strict
-13 Advanced JavaScript Features
-    Avoid
-    RegExp
-    Ajax
-    ObjProto
-14 Putting it all Together
-    Count Down
-    Resize
-    Accordion
-15 Conclusion
-    Where
-    Goodbye
- */
+document.onload = countdown();      //rolling notes function load event
+                                    //only use window.onload once per document!
 
 
-//
+
+
